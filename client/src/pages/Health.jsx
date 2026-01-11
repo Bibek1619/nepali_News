@@ -66,7 +66,7 @@ const Health = () => {
     <CategoryPageTemplate 
       title="स्वास्थ्य" 
       description="स्वास्थ्य सम्बन्धी ताजा समाचारहरू" 
-      newsItems={healthNews} 
+      newsData={healthNews} 
     />
   );
 };

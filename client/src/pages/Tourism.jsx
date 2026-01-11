@@ -9,7 +9,7 @@ const Tourism = () => {
       date: "२०८९ फाल्गुन",
       writer: "मिनु थापा",
       image:
-        "https://images.unsplash.com/photo-1528471094513-ea47d1eab438?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUwMHwwfDF8c2VhcmNofDJ8fGZpbmFuY2lhbHxlbnwwfDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMSNsMpgXea5NdsGhp-jlTC-T_-DhcSRCzmA&s",
       link: "/tourism/tourism-growth",
       description: "नेपालको पर्यटन उद्योगमा वृद्धि देखिएको छ। यो वृद्धि नेपालका विभिन्न स्थलहरूको प्रचारसँग सम्बन्धित छ।",
     },
@@ -20,7 +20,7 @@ const Tourism = () => {
     <CategoryPageTemplate 
       title="पर्यटन" 
       description="नेपाल र विश्वका पर्यटन सम्बन्धी ताजा समाचारहरू" 
-      newsItems={tourismNews} 
+      newsData={tourismNews} 
     />
   );
 };

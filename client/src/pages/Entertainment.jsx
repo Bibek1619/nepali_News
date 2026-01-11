@@ -1,8 +1,35 @@
 import React, { useState } from "react";
 import CategoryPageTemplate from "../components/layout/CategoryPageTemplate";
 
+/* ✅ ADD THIS AT THE TOP */
+const entertainmentNews = [
+  {
+    id: 1,
+    title: "नयाँ नेपाली चलचित्रले बक्स अफिसमा कीर्तिमान बनायो",
+    description: "नयाँ रिलिज भएको नेपाली चलचित्रले पहिलो हप्तामै राम्रो व्यापार गरेको छ।",
+    image: "https://i.ytimg.com/vi/tmJVKsxH7lI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCJk4wRagP_3ZG_eRyMepHS8tscmQ",
+    category: "मनोरञ्जन",
+    date: "2026-01-11",
+  },
+  {
+    id: 2,
+    title: "लोकप्रिय गायकको नयाँ गीत सार्वजनिक",
+    description: "नेपाली संगीत क्षेत्रमा नयाँ गीतले चर्चा पाएको छ।",
+    image: "https://i.ytimg.com/vi/ltsHEqe2oLk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAJMnKEk8XGHQGkVmS4e9kHrjRAxg",
+    category: "मनोरञ्जन",
+    date: "2026-01-10",
+  },
+  {
+    id: 3,
+    title: "नेपाली वेब सिरिजको ट्रेलर सार्वजनिक",
+    description: "प्रतीक्षित नेपाली वेब सिरिजको ट्रेलर सार्वजनिक भएको छ।",
+    image: "https://i.ytimg.com/vi/inErGSSvaAI/sddefault.jpg",
+    category: "मनोरञ्जन",
+    date: "2026-01-09",
+  },
+];
+
 const Entertainment = () => {
-  
   // Quiz Section
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -19,7 +46,6 @@ const Entertainment = () => {
       options: ["काठमाडौं", "पोखरा", "धरान", "भरतपुर"],
       correctAnswer: "काठमाडौं",
     },
-    // Add more questions here
   ];
 
   const handleAnswerClick = (selectedAnswer) => {
@@ -42,11 +68,13 @@ const Entertainment = () => {
         नेपाल र विश्वभरका मनोरञ्जन सम्बन्धी ताजा समाचारहरू
       </p>
 
-      {/* Two-Column Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Left Side - Quiz Section (1/3 width) */}
+        {/* Quiz Section */}
         <div className="md:col-span-1 bg-white p-6 rounded-md shadow-md">
-          <h2 className="text-2xl font-semibold mb-4 text-center">🎯 मनोरञ्जन प्रश्नोत्तरी</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-center">
+            🎯 मनोरञ्जन प्रश्नोत्तरी
+          </h2>
+
           {showScore ? (
             <div className="text-center">
               <p className="text-xl">
@@ -66,7 +94,8 @@ const Entertainment = () => {
           ) : (
             <div>
               <h3 className="text-lg font-semibold mb-4">
-                प्रश्न {currentQuestion + 1}: {quizQuestions[currentQuestion].question}
+                प्रश्न {currentQuestion + 1}:{" "}
+                {quizQuestions[currentQuestion].question}
               </h3>
               <div className="flex flex-col space-y-3">
                 {quizQuestions[currentQuestion].options.map((option, index) => (
@@ -83,9 +112,13 @@ const Entertainment = () => {
           )}
         </div>
 
-        {/* Right Side - News Section (2/3 width) */}
+        {/* News Section */}
         <div className="md:col-span-2">
-          <CategoryPageTemplate title="मनोरञ्जन" description="नेपाल र विश्वभरका मनोरञ्जन सम्बन्धी ताजा समाचारहरू" newsItems={entertainmentNews} />
+          <CategoryPageTemplate
+            title="मनोरञ्जन"
+            description="नेपाल र विश्वभरका मनोरञ्जन सम्बन्धी ताजा समाचारहरू"
+            newsData={entertainmentNews}
+          />
         </div>
       </div>
     </div>
