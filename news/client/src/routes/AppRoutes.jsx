@@ -13,10 +13,10 @@ import Header from "../components/layout/Header";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import Login from "../dashboard/pages/Login";
-import DashboardRoutes from "./DashboardRoutes"; // Import Dashboard 
+import DashboardRoutes from "./DashboardRoutes"; // Import Dashboard
 // Routes
 
-import NewsDetail from './../pages/NewsDetail';
+import NewsDetail from "../pages/NewsDetail";
 
 const AppRoutes = () => {
   const location = useLocation();

@@ -1,12 +1,14 @@
 import { useState } from "react";
-import SimpleDetailsNewCard from "../../components/news/items/SimpleDetailsNewCard";
+import SimpleDetailsNewCard from "../news/items/SimpleDetailsNewCard";
 import Title from "../Title";
 import NewsCard from "../news/items/NewsCard";
 
 // Pagination button generator
 const PaginationButton = ({ onClick, disabled, children }) => (
   <button
-    className={`px-4 py-2 border border-gray-300 rounded-md transition ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-100"}`}
+    className={`px-4 py-2 border border-gray-300 rounded-md transition ${
+      disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-100"
+    }`}
     onClick={onClick}
     disabled={disabled}
   >
@@ -14,7 +16,12 @@ const PaginationButton = ({ onClick, disabled, children }) => (
   </button>
 );
 
-const CategoryPageTemplate = ({ title, description, newsData = [], latestNews = [] }) => {
+const CategoryPageTemplate = ({
+  title,
+  description,
+  newsData = [],
+  latestNews = [],
+}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const newsPerPage = 6; // Adjust the number of news per page
   const totalPages = Math.ceil(newsData.length / newsPerPage);
@@ -76,7 +83,9 @@ const CategoryPageTemplate = ({ title, description, newsData = [], latestNews = 
             <div className="flex justify-center mt-10">
               <div className="flex gap-2">
                 <PaginationButton
-                  onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                  onClick={() =>
+                    setCurrentPage((prev) => Math.max(prev - 1, 1))
+                  }
                   disabled={currentPage === 1}
                 >
                   पछिल्लो
@@ -91,7 +100,9 @@ const CategoryPageTemplate = ({ title, description, newsData = [], latestNews = 
                   </PaginationButton>
                 ))}
                 <PaginationButton
-                  onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                  onClick={() =>
+                    setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                  }
                   disabled={currentPage === totalPages}
                 >
                   अर्को
