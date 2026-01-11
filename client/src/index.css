@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+
+@import "tailwindcss";
+/* Add this in your index.css or App.css */
+.shadow-y {
+  box-shadow: 0 2px  4px rgba(0, 0, 0, 0.4); /* Adjust the shadow's Y position */
+}
+
+@layer base {
+  :root {
+    --news-lightGray: #f0f0f0; /* Example Light Gray */
+    --news-darkGray: #333333;  /* Example Dark Gray */
+    --news-red: #c80000;       /* Example Red */
+  }
+
+  .bg-news-lightGray {
+    background-color: var(--news-lightGray);
+  }
+
+  .text-news-darkGray {
+    color: var(--news-darkGray);
+  }
+
+  .hover\:text-news-red:hover {
+    color: var(--news-red);
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
